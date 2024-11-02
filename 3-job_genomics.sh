@@ -1,16 +1,13 @@
 #!/bin/bash
 
-#SBATCH --job-name=genomics
-#SBATCH --output=logs/job_genomics.txt
-#SBATCH --partition=comp06
-#SBATCH --nodes=1
-#SBATCH --tasks-per-node=8
-#SBATCH --time=02:00:00
+#$ -q all.q
+#$ -V
+#$ -cwd
+#$ -pe smp 1
 
 ## configs 
 module purge
 module load gcc/9.3.1 mkl/19.0.5 intel/19.0.5 R/4.2.2 vcftools/0.1.15 plink/5.2
-
 
 ## create a list of individuals to be used for VCF file
 python3 -u src/create_individuals.py > "logs/individuals.txt"
