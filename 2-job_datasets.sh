@@ -1,11 +1,9 @@
 #!/bin/bash
 
-#SBATCH --job-name=datasets
-#SBATCH --output=logs/job_datasets.txt
-#SBATCH --partition=comp01
-#SBATCH --nodes=1
-#SBATCH --tasks-per-node=8
-#SBATCH --time=01:00:00
+#$ -q all.q
+#$ -V
+#$ -cwd
+#$ -pe smp 1
 
 ## configs 
 module purge
