@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH --partition=comp72
-#SBATCH --nodes=1
-#SBATCH --tasks-per-node=8
-#SBATCH --time=24:00:00
+#$ -q all.q
+#$ -V
+#$ -cwd
+#$ -pe smp 1
 
 ## configs 
 module purge
