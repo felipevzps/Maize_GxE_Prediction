@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH --partition=himem72
-#SBATCH --nodes=1
-#SBATCH --tasks-per-node=16
-#SBATCH --time=72:00:00
+#$ -q all.q
+#$ -V
+#$ -cwd
+#$ -pe smp 1
 
 ## configs 
 module purge
